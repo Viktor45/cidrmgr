@@ -1,0 +1,50 @@
+version: 2
+project_name: cidrmgr
+
+before:
+  hooks:
+    - go mod tidy
+    - sh -c 'git rev-parse --short HEAD > COMMIT'
+
+builds:
+  # ---------------------------------------------------------------------------
+  # Linux Builds (Pure Go / Static)
+  # ---------------------------------------------------------------------------
+  # Can be built on any OS (macOS/Linux) since CGO is disabled.
+  - id: "linux"
+    goos: [linux, windows, darwin]
+    goarch:
+      - "386"
+      - amd64
+      - arm
+      - arm64
+    env: ["CGO_ENABLED=0"]
+    ldflags:
+      - -s -w
+      - -X "main.version={{ .Version }}"
+      - -X "main.commit={{ .ShortCommit }}"
+      - -X "main.build=goreleaser"
+    #main: ./main
+    binary: "{{ .ProjectName }}"
+
+source:
+  enabled: true
+  prefix_template: "{{ .ProjectName }}-{{ .Version }}/"
+  files:
+    - COMMIT
+
+archives:
+  - id: default
+    name_template: >-
+      {{- .ProjectName }}_
+      {{- .Version }}_
+      {{- .Os }}_
+      {{- if eq .Arch "386" }}i386
+      {{- else if eq .Arch "amd64" }}x86_64
+      {{- else }}{{ .Arch }}{{ end -}}
+    formats: ["tar.gz"]
+    # Explicitly list builds to include (optional but good for clarity)
+    ids: ["linux"]
+
+checksum:
+  name_template: "checksums.txt"
