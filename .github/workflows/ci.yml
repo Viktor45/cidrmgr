@@ -47,7 +47,7 @@ jobs:
         run: go test -bench=. -benchmem ./...
 
       - name: Upload binary
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v7
         with:
           name: cidrmgr-${{ matrix.os }}-${{ matrix.go-version }}
           path: cidrmgr${{ runner.os == 'windows' && '.exe' || '' }}
