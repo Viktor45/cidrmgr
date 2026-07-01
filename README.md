@@ -2,6 +2,37 @@
 
 Fast and efficient CLI tool for managing IPv4/IPv6 CIDR ranges. Built with Go and optimized for use in GitHub Actions.
 
+- [cidrmgr](#cidrmgr)
+  - [Features](#features)
+  - [Installation](#installation)
+    - [Build from Source](#build-from-source)
+    - [Using Make (Optional)](#using-make-optional)
+  - [Usage](#usage)
+    - [Basic Commands](#basic-commands)
+    - [Merge Command](#merge-command)
+      - [Usage](#usage-1)
+      - [Options](#options)
+      - [Examples](#examples)
+  - [Input Format](#input-format)
+    - [Example Input File](#example-input-file)
+    - [Example Output](#example-output)
+  - [GitHub Actions Integration](#github-actions-integration)
+  - [Performance](#performance)
+  - [Testing](#testing)
+    - [Test Coverage](#test-coverage)
+  - [Dependencies](#dependencies)
+  - [Error Handling](#error-handling)
+  - [Output Characteristics](#output-characteristics)
+  - [Contributing](#contributing)
+  - [License](#license)
+  - [Acknowledgments](#acknowledgments)
+  - [Troubleshooting](#troubleshooting)
+    - ["invalid CIDR format" error](#invalid-cidr-format-error)
+    - [Large file processing is slow](#large-file-processing-is-slow)
+    - [Memory issues](#memory-issues)
+  - [Quick Start](#quick-start)
+
+
 ## Features
 
 - ⚡ **Fast**: Efficient CIDR range merging using the `seancfoley/ipaddress-go` library
