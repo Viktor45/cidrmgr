@@ -306,8 +306,8 @@ func BenchmarkMergeLarge(b *testing.B) {
 
 	// Generate large input with many ranges
 	writer := bufio.NewWriter(tmpInput)
-	for i := 0; i < 1000; i++ {
-		writer.WriteString(strings.Repeat("0", (i%3)) + strings.Repeat("1", (i%3)) + ".0.0.0/" + string(rune(8+(i%17))) + "\n")
+	for i := range 1000 {
+		writer.WriteString(strings.Repeat("0", i%3) + strings.Repeat("1", i%3) + ".0.0.0/" + string(rune(8+(i%17))) + "\n")
 	}
 	writer.Flush()
 	tmpInput.Close()
