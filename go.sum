@@ -1,4 +1,4 @@
 github.com/seancfoley/bintree v1.4.0 h1:Voxh1yBkOMWTXR4dP/hOrLYVq/yVwxaRVPc6pIj3kME=
 github.com/seancfoley/bintree v1.4.0/go.mod h1:hIUabL8OFYyFVTQ6azeajbopogQc2l5C/hiXMcemWNU=
-github.com/seancfoley/ipaddress-go v1.8.1 h1:yOWf9lYLE8TFpdSZyCjnjotBb9ZHCxUXlAhBv+nzOKA=
-github.com/seancfoley/ipaddress-go v1.8.1/go.mod h1:eUgkV6XW0J4u07aANfX3Fr9PozlFkdwLde5aEVQfeqk=
+github.com/seancfoley/ipaddress-go v1.8.3 h1:gk9LKhvVAIWqOqLQ7X2RHQtpIhdESRGYATiPd/NikCk=
+github.com/seancfoley/ipaddress-go v1.8.3/go.mod h1:eUgkV6XW0J4u07aANfX3Fr9PozlFkdwLde5aEVQfeqk=
